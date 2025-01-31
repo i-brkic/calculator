@@ -22,10 +22,35 @@ const display = document.querySelector(".display");
 
 numbers.forEach(element => {
   element.addEventListener("click", () => {
-    number1 =
-      display.textContent === "0"
-        ? element.textContent
-        : (number1 += element.textContent);
-    display.textContent = number1;
+    if (operator === undefined) {
+      number1 =
+        display.textContent === "0"
+          ? element.textContent
+          : (number1 += element.textContent);
+
+      display.textContent = number1;
+    } else {
+      number2 =
+        number2 === undefined
+          ? element.textContent
+          : (number2 += element.textContent);
+
+      display.textContent = number2;
+    }
+  });
+});
+
+// 5. Make the calculator work
+
+const operations = document.querySelectorAll(".operation");
+const equal = document.querySelector(".equal");
+const allClear = document.querySelector(".clear");
+
+operations.forEach(element => {
+  element.addEventListener("click", e => {
+    if (display.textContent === "0") {
+      alert("Please enter a number!");
+    }
+    operator = e.target.innerText;
   });
 });
