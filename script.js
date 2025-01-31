@@ -54,3 +54,10 @@ operations.forEach(element => {
     operator = e.target.innerText;
   });
 });
+
+allClear.addEventListener("click", () => {
+  number1 = undefined;
+  number2 = undefined;
+  operator = undefined;
+  display.textContent = 0;
+});
