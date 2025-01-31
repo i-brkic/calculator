@@ -61,3 +61,32 @@ allClear.addEventListener("click", () => {
   operator = undefined;
   display.textContent = 0;
 });
+
+equal.addEventListener("click", () => {
+  if (number1 !== undefined && number2 !== undefined && operator) {
+    const num1 = parseFloat(number1);
+    const num2 = parseFloat(number2);
+
+    switch (operator) {
+      case "/":
+        if (number2 !== 0) {
+          display.textContent = operate(num1, divide, num2);
+        } else {
+          alert("Cant divide by zero! AYOOOOOO");
+        }
+        break;
+      case "*":
+        display.textContent = operate(num1, multiply, num2);
+        break;
+      case "-":
+        display.textContent = operate(num1, subtract, num2);
+        break;
+      case "+":
+        display.textContent = operate(num1, add, num2);
+        break;
+    }
+    number1 = display.textContent;
+    number2 = undefined;
+    operator = undefined;
+  }
+});
