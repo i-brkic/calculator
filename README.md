@@ -1,1 +1,1 @@
-# calculator
+A simple calculator with 4 operations: addition, subtraction, multiplication and division. It calculates only one operation at the time, thus allowing the user to press the operation button without the need for equal button, making the calculations continous.
